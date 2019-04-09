@@ -5,6 +5,7 @@ function openNav() {
   document.body.style.backgroundColor = "rgba(231, 227, 227,0.2)";
   locationButton.style.display = "none";
   createNewSpotButton.style.display = "block";
+  document.querySelector(".svg-morph-animation").style.display = "none";
 }
 
 /* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
@@ -15,6 +16,7 @@ function closeNav() {
   spotsContainer.innerHTML = "";
   locationButton.style.display = "block";
   createNewSpotButton.style.display = "none";
+  document.querySelector(".svg-morph-animation").style.display = "block";
 }
 
 const apiUrl = "http://localhost:3000/api/v1/locations";
@@ -34,8 +36,10 @@ createNewSpotButton.addEventListener("click", showCreateForm);
 
 function createLocationTemplate(location) {
   return `
+    <ul>
     <li class="location"
     data-location-id="${location.id}">${location.name}</li>
+    </ul>  
     `;
 }
 

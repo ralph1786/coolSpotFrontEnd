@@ -19,7 +19,28 @@
       <ul class="list-locations"></ul>
     </div>
     <!-- Use any element to open the sidenav -->
-    <button onclick="openNav()" class="location-button">Get Started</button>
+    <div class="svg-morph-animation">
+      <svg viewBox="0 0 215 110">
+        <defs>
+          <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop
+              offset="0%"
+              style="stop-color:rgb(253,200,48);stop-opacity:1"
+            />
+            <stop
+              offset="100%"
+              style="stop-color:rgb(243,115,53);stop-opacity:1"
+            />
+          </linearGradient>
+        </defs>
+        <polygon class="polymorph" points="215,110 0,110 0,0 47.7,0 215,0" />
+      </svg>
+      <div id="blip">
+        <h3>Welcome To coolSpots</h3>
+        <p>Where the trendiest places around the world live!</p>
+        <button onclick="openNav()" class="location-button">Take A Look</button>
+      </div>
+    </div>
     <button class="create-new-spot-button">Add New Spot</button>
     <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
     <div id="main"></div>
@@ -78,6 +99,8 @@
     </div>
 
     <script src="index.js"></script>
+    <script src="index2.js"></script>
+    <script src="anime.min.js"></script>
     <!-- Compiled and minified JavaScript -->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
   </body>

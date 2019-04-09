@@ -1,4 +1,25 @@
-/* The side navigation menu */
+@import url("https://fonts.googleapis.com/css?family=Gaegu|Merienda");
+
+body {
+  margin: 0;
+  padding: 80px;
+}
+
+.polymorph {
+  fill: url(#grad1);
+}
+
+#blip {
+  position: absolute;
+  color: rgb(250, 161, 45);
+  right: 25%;
+  top: 0;
+  opacity: 0;
+  width: 30%;
+  transform: translateY(-800px);
+  font-family: "Merienda", cursive;
+}
+
 .sidenav {
   height: 100%; /* 100% Full-height */
   width: 0; /* 0 width - change this with JavaScript */
@@ -6,7 +27,7 @@
   z-index: 1; /* Stay on top */
   top: 0; /* Stay at the top */
   left: 0;
-  background-color: rgb(236, 116, 116); /* Black*/
+  background-color: rgb(243, 134, 32); /* Black*/
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 60px; /* Place content 60px from the top */
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
@@ -14,14 +35,14 @@
 
 /* The navigation menu links */
 .sidenav a,
-.sidenav li {
-  padding: 8px 8px 8px 32px;
+.sidenav ul li {
+  padding: 8px 8px 8px 8px;
   text-decoration: none;
   font-size: 25px;
   color: #f7f3f3;
   display: block;
   transition: 0.3s;
-  margin: 18px 0;
+  margin: 10px 0;
 }
 
 /* When you mouse over the navigation links, change their color */
@@ -40,55 +61,64 @@
   margin-left: 50px;
 }
 
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  /* transition: margin-left 0.5s; */
+  padding: 20px;
+  grid-gap: 20px;
+}
+
 .location-button {
   /* display: grid;
   grid-template-columns: repeat(1fr, 6); */
   margin-left: 50%;
-  margin-top: 100px;
-  color: rgb(231, 31, 31);
+  margin-top: 10px;
+  color: rgb(238, 67, 15);
   cursor: pointer;
-  border: 2px solid black;
+  /* border: 2px solid black; */
+  -webkit-box-shadow: 10px 10px 82px -19px rgba(133, 128, 133, 0.78);
+  -moz-box-shadow: 10px 10px 82px -19px rgba(133, 128, 133, 0.78);
+  box-shadow: 10px 10px 82px -19px rgba(133, 128, 133, 0.78);
   padding: 5px;
-  border-radius: 20%;
+  border-radius: 20px;
 }
 
 .location-button:hover {
-  background-color: rgb(231, 31, 31);
+  background-color: rgb(238, 67, 15);
+  transform: scale(1.1);
+  transition: all 0.4s ease;
   color: white;
 }
 
 .create-new-spot-button {
   display: none;
-  margin-right: 23px;
-  margin-top: 15px;
+  margin-top: -50px;
   float: right;
-  color: rgb(52, 216, 52);
+  color: rgb(101, 223, 101);
   cursor: pointer;
-  border: 2px solid black;
+  /* border: 2px solid black; */
+  -webkit-box-shadow: 10px 10px 82px -19px rgba(133, 128, 133, 0.78);
+  -moz-box-shadow: 10px 10px 82px -19px rgba(133, 128, 133, 0.78);
+  box-shadow: 10px 10px 82px -19px rgba(133, 128, 133, 0.78);
   padding: 5px;
-  border-radius: 20%;
+  border-radius: 20px;
 }
 
 .create-new-spot-button:hover {
   background-color: rgb(52, 216, 52);
+  transform: scale(1.1);
+  transition: all 0.4s ease-in;
   color: white;
-}
-
-/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-#main {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  transition: margin-left 0.5s;
-  padding: 20px;
-  grid-gap: 20px;
 }
 
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   width: 100%;
-  background-color: rgb(250, 184, 184);
+  background-color: rgba(250, 181, 91, 0.938);
   color: white;
   margin: 20px;
   overflow-y: scroll;
