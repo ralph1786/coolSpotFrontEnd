@@ -19,7 +19,8 @@ function closeNav() {
   document.querySelector(".svg-morph-animation").style.display = "block";
 }
 
-const apiUrl = "http://localhost:3000/api/v1/locations";
+const apiUrlLocations = "http://localhost:3000/api/v1/locations";
+const apiUrlSpots = "http://localhost:3000/api/v1/spots";
 const locationsContainer = document.querySelector(".list-locations");
 const spotsContainer = document.querySelector("#main");
 const locationButton = document.querySelector(".location-button");
@@ -44,14 +45,16 @@ function createLocationTemplate(location) {
 }
 
 function fetchAllLocations() {
-  fetch(apiUrl)
+  fetch(apiUrlLocations)
     .then(res => res.json())
-    .then(locations =>
+    .then(locations => {
+      spotsContainer.innerHTML += `<h2>Please Choose A Location</h2>`;
       locations.forEach(location => {
         // console.log(location);
         locationsContainer.innerHTML += createLocationTemplate(location);
-      })
-    );
+      });
+    })
+    .catch(err => console.log(err));
 }
 
 fetchAllLocations();
@@ -87,10 +90,11 @@ function delegateLocationClick() {
 delegateLocationClick();
 
 const fetchSpots = locationId => {
-  fetch(`${apiUrl}/${locationId}`)
+  fetch(`${apiUrlLocations}/${locationId}`)
     .then(res => res.json())
     .then(location => {
       // console.log(location.spots)
+      spotsContainer.innerHTML += `<h1>Welcome To ${location.name}</h1>`;
       location.spots.forEach(spot => {
         spotsContainer.innerHTML += templateSpotCard(spot);
       });
@@ -124,9 +128,6 @@ function delegateShowPageClick() {
         reviewModal.innerText = document.querySelector(
           `.review[data-spot-id="${spotId}"]`
         ).innerText;
-        // console.log(
-        //   document.querySelector(`.review[data-spot-id="${spotId}"]`)
-        // );
         imageModal.setAttribute("src", imgSrc);
       } else if (e.target.className === "container") {
         const imgSrc = e.target.previousElementSibling.currentSrc;
@@ -207,7 +208,7 @@ function delegateEditSubmitButton() {
 delegateEditSubmitButton();
 
 function makeUpdateFetch(formInfo) {
-  fetch(`${apiUrl}/${formInfo.id}`, {
+  fetch(`${apiUrlSpots}/${formInfo.id}`, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json"
@@ -215,15 +216,15 @@ function makeUpdateFetch(formInfo) {
     body: JSON.stringify(formInfo)
   })
     .then(res => res.json())
-    .then(spot => console.log(spot));
+    .then(spot => {
+      console.log(spot);
+    });
 }
 
 //CREATE A NEW SPOT
 
 const form = document.querySelector(".create-form");
 const selectLocation = document.querySelector(".location-options");
-// console.log(form["spot-name"].value);
-// console.log(selectLocation.value);
 const createButton = form["submit"];
 
 function createNewSpotFetch() {
@@ -232,9 +233,11 @@ function createNewSpotFetch() {
     name: form["spot-name"].value,
     address: form["spot-address"].value,
     image: form["image-url"].value,
-    review: form["spot-review"].value
+    review: form["spot-review"].value,
+    location_id: locationId
   };
-  fetch(`${apiUrl}`, {
+  // debugger;
+  fetch(`${apiUrlSpots}`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
@@ -243,7 +246,8 @@ function createNewSpotFetch() {
   })
     .then(res => res.json())
     .then(spot => {
-      console.log(spot);
+      // console.log(spot);
+      spotsContainer.innerHTML += templateSpotCard(spot);
     });
 }
 
@@ -251,6 +255,7 @@ createButton.addEventListener("click", e => {
   e.preventDefault();
   // console.log("it works");
   createNewSpotFetch();
+  modal.style.display = "none";
 });
 
 //MODAL CODE BELOW
