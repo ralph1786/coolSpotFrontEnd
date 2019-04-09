@@ -1,8 +1,17 @@
 @import url("https://fonts.googleapis.com/css?family=Gaegu|Merienda");
 
+:root {
+  --modal-bg-color: #3cb3f8;
+  --modal-text-color: white;
+}
+
 body {
   margin: 0;
   padding: 80px;
+}
+
+button {
+  outline: none;
 }
 
 .polymorph {
@@ -11,7 +20,8 @@ body {
 
 #blip {
   position: absolute;
-  color: rgb(250, 161, 45);
+  /* color: rgb(250, 161, 45); */
+  color: rgba(91, 165, 250, 0.993);
   right: 25%;
   top: 0;
   opacity: 0;
@@ -27,7 +37,7 @@ body {
   z-index: 1; /* Stay on top */
   top: 0; /* Stay at the top */
   left: 0;
-  background-color: rgb(243, 134, 32); /* Black*/
+  background-color: rgb(248, 151, 61); /* Black*/
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 60px; /* Place content 60px from the top */
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
@@ -39,17 +49,18 @@ body {
   padding: 8px 8px 8px 8px;
   text-decoration: none;
   font-size: 25px;
-  color: #f7f3f3;
+  color: white;
   display: block;
-  transition: 0.3s;
   margin: 10px 0;
 }
 
 /* When you mouse over the navigation links, change their color */
 .sidenav a:hover,
 .sidenav li:hover {
-  color: #d4d3d3;
+  color: #adacac;
   cursor: pointer;
+  transform: scale(1.1);
+  transition: all 0.4s ease-in;
 }
 
 /* Position and style the close button (top right corner) */
@@ -71,12 +82,25 @@ body {
   grid-gap: 20px;
 }
 
+#main h2 {
+  grid-column: 1/3;
+  grid-row: 2/3;
+  justify-self: end;
+}
+
+#main h1 {
+  place-self: center;
+  font-family: "Merienda", cursive;
+  color: rgb(90, 63, 40);
+}
+
 .location-button {
   /* display: grid;
   grid-template-columns: repeat(1fr, 6); */
   margin-left: 50%;
   margin-top: 10px;
-  color: rgb(238, 67, 15);
+  color: white;
+  background-color: rgb(248, 173, 74);
   cursor: pointer;
   /* border: 2px solid black; */
   -webkit-box-shadow: 10px 10px 82px -19px rgba(133, 128, 133, 0.78);
@@ -87,7 +111,7 @@ body {
 }
 
 .location-button:hover {
-  background-color: rgb(238, 67, 15);
+  background-color: rgba(248, 159, 42, 0.993);
   transform: scale(1.1);
   transition: all 0.4s ease;
   color: white;
@@ -97,7 +121,8 @@ body {
   display: none;
   margin-top: -50px;
   float: right;
-  color: rgb(101, 223, 101);
+  color: white;
+  background-color: rgb(101, 223, 101);
   cursor: pointer;
   /* border: 2px solid black; */
   -webkit-box-shadow: 10px 10px 82px -19px rgba(133, 128, 133, 0.78);
@@ -108,7 +133,7 @@ body {
 }
 
 .create-new-spot-button:hover {
-  background-color: rgb(52, 216, 52);
+  background-color: rgb(30, 182, 30);
   transform: scale(1.1);
   transition: all 0.4s ease-in;
   color: white;
@@ -118,7 +143,7 @@ body {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   width: 100%;
-  background-color: rgba(250, 181, 91, 0.938);
+  background-color: rgba(91, 165, 250, 0.993);
   color: white;
   margin: 20px;
   overflow-y: scroll;
@@ -155,6 +180,8 @@ body {
 .container .js-edit:hover {
   background-color: rgb(238, 148, 44);
   color: white;
+  transform: scale(1.05);
+  transition: all 0.4s ease-in;
 }
 
 .container .js-delete {
@@ -169,6 +196,8 @@ body {
 .container .js-delete:hover {
   background-color: rgb(230, 17, 17);
   color: white;
+  transform: scale(1.05);
+  transition: all 0.4s ease-in;
 }
 
 /* THIS IS THE CSS FOR THE MODAL. */
@@ -189,11 +218,12 @@ body {
 
 /* Modal Content/Box */
 .modal-content {
-  background-color: #fce0e0;
+  background-color: var(--modal-bg-color);
   margin: 15% auto; /* 15% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
-  width: 40%; /* Could be more or less, depending on screen size */
+  width: 40%;
+  color: var(--modal-text-color);
 }
 
 .modal-content .image-modal {
@@ -205,14 +235,12 @@ body {
 .address-modal,
 .review-modal {
   display: block;
-  /* float: right; */
-  color: rgb(133, 127, 127);
   font-size: 1.3em;
 }
 
 /* The Close Button */
 .close {
-  color: #aaa;
+  /* color: #aaa; */
   float: right;
   font-size: 28px;
   font-weight: bold;
@@ -220,9 +248,11 @@ body {
 
 .close:hover,
 .close:focus {
-  color: black;
+  color: rgb(153, 152, 152);
   text-decoration: none;
   cursor: pointer;
+  transform: scale(1.4);
+  transition: all 0.4s ease-in;
 }
 
 .form-container {
@@ -239,12 +269,12 @@ body {
 }
 
 .form-content {
-  background-color: #fce0e0;
+  background-color: var(--modal-bg-color);
   margin: 15% auto; /* 15% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
   width: 40%; /* Could be more or less, depending on screen size */
-  color: rgb(133, 127, 127);
+  color: var(--modal-text-color);
 }
 
 .create-form-container {
@@ -261,16 +291,16 @@ body {
 }
 
 .create-form-content {
-  background-color: #fce0e0;
+  background-color: var(--modal-bg-color);
   margin: 15% auto; /* 15% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
   width: 40%; /* Could be more or less, depending on screen size */
-  color: rgb(133, 127, 127);
+  color: var(--modal-text-color);
 }
 
 button[type="submit"]:hover {
-  background-color: salmon;
+  background-color: rgb(250, 161, 45);
   color: white;
   cursor: pointer;
 }
