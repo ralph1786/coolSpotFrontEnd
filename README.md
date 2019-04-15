@@ -4,7 +4,7 @@ Application where users can add places they have visited around the world. They 
 
 ## Getting Started
 
-To get the application up and running your must clone this project, which is the frontend of the application as well as the backend that has the name of coolSpotsBacked. Once you have cloned both repositories go into your backend, and in the terminal run **rails s** to start the ruby server. For the frontend open it on your favorite browser. 
+To get the application up and running you must clone this project, which is the frontend of the application as well as the backend that has the name of coolSpotsBackend. Once you have cloned both repositories go into your backend, and in the terminal run **rails s** to start the rails server. For the frontend open it on your favorite browser. 
 
 ### Prerequisites
 
