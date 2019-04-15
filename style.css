@@ -74,7 +74,8 @@ button {
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #main {
-  display: grid;
+  display: none;
+  /* display: grid; */
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
   /* transition: margin-left 0.5s; */
@@ -281,6 +282,27 @@ button[type="submit"]:hover {
   background-color: rgb(250, 161, 45);
   color: white;
   cursor: pointer;
+}
+
+.edit-form {
+  text-align: center;
+  margin: 10px;
+}
+
+.edit-form label,
+.edit-form input {
+  margin: 10px;
+  width: 60%;
+  outline: none;
+}
+
+.edit-form input:focus {
+  border-color: orange;
+}
+
+.edit-form button[type="submit"] {
+  margin-top: 5px;
+  float: right;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */

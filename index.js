@@ -6,6 +6,7 @@ function openNav() {
   locationButton.style.display = "none";
   createNewSpotButton.style.display = "block";
   document.querySelector(".svg-morph-animation").style.display = "none";
+  fetchAllLocations();
 }
 
 /* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
@@ -17,6 +18,7 @@ function closeNav() {
   locationButton.style.display = "block";
   createNewSpotButton.style.display = "none";
   document.querySelector(".svg-morph-animation").style.display = "block";
+  locationsContainer.innerHTML = "";
 }
 
 const apiUrlLocations = "http://localhost:3000/api/v1/locations";
@@ -48,6 +50,7 @@ function fetchAllLocations() {
   fetch(apiUrlLocations)
     .then(res => res.json())
     .then(locations => {
+      spotsContainer.style.display = "grid";
       spotsContainer.innerHTML += `<h2>Please Choose A Location</h2>`;
       locations.forEach(location => {
         // console.log(location);
@@ -56,8 +59,6 @@ function fetchAllLocations() {
     })
     .catch(err => console.log(err));
 }
-
-fetchAllLocations();
 
 const templateSpotCard = spot => {
   return `
