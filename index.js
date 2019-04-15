@@ -62,7 +62,7 @@ function fetchAllLocations() {
 
 const templateSpotCard = spot => {
   return `
-    <div class="card" data-spot-id="${spot.id}">
+    <div class="card animated fadeIn" data-spot-id="${spot.id}">
     <img src="${spot.image}" alt="Avatar" class="image" data-spot-id="${
     spot.id
   }">
@@ -191,6 +191,28 @@ function delegateEditButton() {
   });
 }
 delegateEditButton();
+
+function delegateDeleteButton() {
+  spotsContainer.addEventListener("click", e => {
+    if (e.target.className === "js-delete") {
+      const spotId = e.target.dataset.spotId;
+      // debugger;
+      deleteFetch(spotId);
+      e.target.parentNode.parentNode.remove();
+    }
+  });
+}
+
+delegateDeleteButton();
+
+function deleteFetch(spotId) {
+  fetch(`${apiUrlSpots}/${spotId}`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json"
+    }
+  });
+}
 
 function delegateEditSubmitButton() {
   formContent.addEventListener("submit", e => {
