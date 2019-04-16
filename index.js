@@ -153,6 +153,7 @@ function delegateShowPageClick() {
 }
 
 delegateShowPageClick();
+//END OF SHOW PAGE CODE
 
 //EDIT FORM, EDIT BUTTON DELEGATION, FETCH(PATCH)
 
@@ -192,6 +193,38 @@ function delegateEditButton() {
 }
 delegateEditButton();
 
+function delegateEditSubmitButton() {
+  formContent.addEventListener("submit", e => {
+    e.preventDefault();
+    // console.log(e.target);
+    const formInfo = {
+      id: e.target.dataset.spotId,
+      review: e.target["review"].value
+    };
+    makeUpdateFetch(formInfo);
+  });
+}
+
+delegateEditSubmitButton();
+
+function makeUpdateFetch(formInfo) {
+  fetch(`${apiUrlSpots}/${formInfo.id}`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(formInfo)
+  })
+    .then(res => res.json())
+    .then(spotInfo => {
+      formContainer.style.display = "none";
+      console.log(spotInfo);
+    });
+}
+//END OF UPDATE
+
+//DELETE FUNCTIONALITY
+
 function delegateDeleteButton() {
   spotsContainer.addEventListener("click", e => {
     if (e.target.className === "js-delete") {
@@ -213,42 +246,14 @@ function deleteFetch(spotId) {
     }
   });
 }
-
-function delegateEditSubmitButton() {
-  formContent.addEventListener("submit", e => {
-    e.preventDefault();
-    // console.log(e.target);
-    const formInfo = {
-      id: e.target.dataset.spotId,
-      review: e.target["review"].value
-    };
-
-    // console.log(formInfo);
-    makeUpdateFetch(formInfo);
-  });
-}
-
-delegateEditSubmitButton();
-
-function makeUpdateFetch(formInfo) {
-  fetch(`${apiUrlSpots}/${formInfo.id}`, {
-    method: "PATCH",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(formInfo)
-  })
-    .then(res => res.json())
-    .then(spot => {
-      console.log(spot);
-    });
-}
+//END OF DELETE FUNCTIONALITY
 
 //CREATE A NEW SPOT
 
 const form = document.querySelector(".create-form");
 const selectLocation = document.querySelector(".location-options");
 const createButton = form["submit"];
+const createFormModal = document.querySelector(".create-form-container");
 
 function createNewSpotFetch() {
   const locationId = selectLocation.value;
@@ -271,6 +276,7 @@ function createNewSpotFetch() {
     .then(spot => {
       // console.log(spot);
       spotsContainer.innerHTML += templateSpotCard(spot);
+      createFormModal.style.display = "none";
     });
 }
 
