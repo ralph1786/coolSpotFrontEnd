@@ -75,8 +75,8 @@ button {
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #main {
   display: none;
-  /* display: grid; */
-  grid-template-columns: repeat(3, 1fr);
+  /* grid-template-columns: repeat(3, 1fr); */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   grid-template-rows: repeat(3, 1fr);
   /* transition: margin-left 0.5s; */
   padding: 20px;
@@ -303,15 +303,4 @@ button[type="submit"]:hover {
 .edit-form button[type="submit"] {
   margin-top: 5px;
   float: right;
-}
-
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-  .sidenav {
-    padding-top: 15px;
-  }
-  .sidenav a,
-  .sidenav li {
-    font-size: 18px;
-  }
 }
