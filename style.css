@@ -171,11 +171,11 @@ button {
 
 .container .js-edit {
   background-color: white;
-  float: right;
   color: rgb(238, 148, 44);
-  margin: 5px;
+  margin: 5px auto;
   padding: 5px;
   cursor: pointer;
+  width: 75%;
 }
 
 .container .js-edit:hover {
@@ -187,11 +187,11 @@ button {
 
 .container .js-delete {
   background-color: white;
-  float: right;
-  margin: 5px;
+  margin: 5px auto;
   padding: 5px;
   color: rgb(230, 17, 17);
   cursor: pointer;
+  width: 75%;
 }
 
 .container .js-delete:hover {
