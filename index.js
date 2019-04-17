@@ -1,6 +1,6 @@
 /* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
 function openNav() {
-  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("mySidenav").style.width = "30%";
   document.getElementById("main").style.marginLeft = "250px";
   document.body.style.backgroundColor = "rgba(231, 227, 227,0.2)";
   locationButton.style.display = "none";
