@@ -218,7 +218,9 @@ function makeUpdateFetch(formInfo) {
     .then(res => res.json())
     .then(spotInfo => {
       formContainer.style.display = "none";
-      console.log(spotInfo);
+      // console.log(spotInfo);
+      reviewModal.innerText = spotInfo.review;
+      // debugger;
     });
 }
 //END OF UPDATE
