@@ -1,0 +1,103 @@
+{
+  "locations": [
+    {
+      "id": 1,
+      "name": "New York",
+      "spots": [
+        {
+          "id": 1,
+          "name": "Tonies Pizza",
+          "address": "441 Broadway",
+          "review": "Its really great!",
+          "image": "https://images.freshop.com/3144151/6b4767f7226cbb0ad890aeb8c53deeb7_medium.png"
+        },
+        {
+          "id": 7,
+          "name": "Rockefeller Center",
+          "address": "45 Rockefeller Plaza",
+          "review": "Spend your Christmas holidays here and bring your camera as well.",
+          "image": "https://d1v5vpeyrmf36z.cloudfront.net/media/CACHE/images/uploads/zinnia/holiday_tree_rink_sized/90e367ca7faa334a5e848a34992ca368.jpg"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Chicago",
+      "spots": [
+        {
+          "id": 3,
+          "name": "The Art Institute of Chicago",
+          "address": "111 S Michigan Avenue",
+          "review": "Good entertainment, at the fraction of the price",
+          "image": "https://inspiredimperfection.com/wp-content/uploads/2017/07/art-institute-of-chicago.jpg"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Miami",
+      "spots": [
+        {
+          "id": 4,
+          "name": "South Beach",
+          "address": "Southern End of Miami Beach",
+          "review": "Great beach, bring your sunscreen!",
+          "image": "https://static1.squarespace.com/static/578fbdf1ebbd1aa62fb77621/t/5926fc51f7e0ab55ef47dba8/1495727198088/?format=750w"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Paris",
+      "spots": [
+        {
+          "id": 5,
+          "name": "Du Pain Et des Idees",
+          "address": "Rue Yves Toudic",
+          "review": "You should try their baguettes!",
+          "image": "https://media-cdn.tripadvisor.com/media/photo-s/08/d7/d4/df/too-much-to-choose-from.jpg"
+        },
+        {
+          "id": 9,
+          "name": "Louvre Museum",
+          "address": "Rue de Rivoli",
+          "review": "Expect very long lines, but it's worth it.",
+          "image": "https://www.tour.taxileader.net/images/paris/attrazioni/coda-priramide-louvre.jpg"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Vegas",
+      "spots": [
+        {
+          "id": 2,
+          "name": "Bellagio Fountains",
+          "address": "3600 S Las Vegas Blvd",
+          "review": "A must see show!",
+          "image": "https://travel.usnews.com/static-travel/images/destinations/17/fountains_flickr_melfoody.jpg"
+        },
+        {
+          "id": 8,
+          "name": "Bacchanal Buffet",
+          "address": "3570 South Las Vegas Blvd",
+          "review": "If you are a buffet fan come here to have a blast and fill yourself to max!",
+          "image": "https://static1.squarespace.com/static/54fcfb54e4b0ecb31a605ed2/t/55e92215e4b06f04254c8c84/1441341975139/"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "London",
+      "spots": [
+        {
+          "id": 6,
+          "name": "Buckingham Palace",
+          "address": "Westminster, London SW1A",
+          "review": "A place to appreciate the history of the Old World.",
+          "image": "https://cdn.londonandpartners.com/visit/london-organisations/buckingham-palace/100222-640x360-buckingham-palace-at-dusk-640.jpg"
+        }
+      ]
+    }
+  ]
+}
