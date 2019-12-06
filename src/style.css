@@ -46,7 +46,7 @@ button {
 /* The navigation menu links */
 
 .sidenav ul li {
-  padding: 8px 8px 8px 8px;
+  padding: 8px;
   text-decoration: none;
   font-size: 25px;
   color: white;
@@ -69,7 +69,7 @@ button {
 .sidenav li:hover {
   color: #adacac;
   cursor: pointer;
-  transform: scale(1.1);
+  transform: scale(1.05);
   transition: all 0.4s ease-in;
 }
 
@@ -135,7 +135,6 @@ button {
   color: white;
   background-color: rgb(101, 223, 101);
   cursor: pointer;
-  /* border: 2px solid black; */
   -webkit-box-shadow: 10px 10px 82px -19px rgba(133, 128, 133, 0.78);
   -moz-box-shadow: 10px 10px 82px -19px rgba(133, 128, 133, 0.78);
   box-shadow: 10px 10px 82px -19px rgba(133, 128, 133, 0.78);
@@ -145,7 +144,7 @@ button {
 
 .create-new-spot-button:hover {
   background-color: rgb(30, 182, 30);
-  transform: scale(1.1);
+  transform: scale(1.05);
   transition: all 0.4s ease-in;
   color: white;
 }
@@ -259,10 +258,10 @@ button {
 
 .close:hover,
 .close:focus {
-  color: rgb(153, 152, 152);
+  color: rgb(209, 209, 209);
   text-decoration: none;
   cursor: pointer;
-  transform: scale(1.4);
+  transform: scale(1.1);
   transition: all 0.4s ease-in;
 }
 
