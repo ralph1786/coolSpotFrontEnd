@@ -6,8 +6,8 @@
 }
 
 body {
-  margin: 0;
-  padding: 80px;
+  margin-top: 20px;
+  /* padding: 80px; */
 }
 
 button {
@@ -16,6 +16,7 @@ button {
 
 .polymorph {
   fill: url(#grad1);
+  height: 100vh;
 }
 
 #blip {
@@ -28,6 +29,10 @@ button {
   width: 30%;
   transform: translateY(-800px);
   font-family: "Merienda", cursive;
+}
+
+#blip p {
+  font-size: 1.3rem;
 }
 
 .sidenav {
@@ -117,8 +122,9 @@ button {
   -webkit-box-shadow: 10px 10px 82px -19px rgba(133, 128, 133, 0.78);
   -moz-box-shadow: 10px 10px 82px -19px rgba(133, 128, 133, 0.78);
   box-shadow: 10px 10px 82px -19px rgba(133, 128, 133, 0.78);
-  padding: 5px;
-  border-radius: 20px;
+  padding: 0.8rem;
+  border-radius: 25px;
+  font-size: 1.2rem;
 }
 
 .location-button:hover {
