@@ -7,14 +7,6 @@
     <link rel="stylesheet" href="./style.css" type="text/html" />
     <link rel="stylesheet" href="./responsiveStyle.css" type="text/html" />
     <link rel="stylesheet" href="./createFormStyle.css" type="text/html" />
-    <!-- <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css"
-    /> -->
-    <!-- <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-    /> -->
     <title>CoolSpots</title>
   </head>
   <body>
@@ -40,7 +32,7 @@
         <polygon class="polymorph" points="215,110 0,110 0,0 47.7,0 215,0" />
       </svg>
       <div id="blip">
-        <h3>Welcome To coolSpots</h3>
+        <h1>Welcome To coolSpots</h1>
         <p>Where the trendiest places around the world live!</p>
         <button class="location-button">Take A Look</button>
       </div>
@@ -65,7 +57,9 @@
       <div class="create-form-content">
         <form class="create-form">
           <h3>Add Your FavSpot</h3>
-          <select class="location-options">
+          <label for="locations">Choose City</label>
+          <select name="locations" class="location-options">
+            <option selected disabled>Options</option>
             <option value="1">New York</option>
             <option value="2">Chicago</option>
             <option value="3">Miami</option>
@@ -73,39 +67,32 @@
             <option value="5">Vegas</option>
             <option value="6">London</option>
           </select>
-          <input
-            type="text"
-            name="image-url"
-            placeholder="Image Url"
-            value=""
-          />
-          <input
-            type="text"
-            name="spot-name"
-            placeholder="Spot Name"
-            value=""
-          />
+          <label for="spot-name">Name:</label>
+          <input type="text" name="spot-name" placeholder="Name" value="" />
+          <label for="spot-image">Image:</label>
+          <input type="text" name="spot-image" placeholder="Image" value="" />
+          <label for="spot-address">Address:</label>
           <input
             type="text"
             name="spot-address"
-            placeholder="Spot Address"
+            placeholder="Address"
             value=""
           />
-          <input
+          <label for="review" class="create-form-review">Review:</label>
+          <textarea
+            class="create-form-review"
             type="text"
             name="spot-review"
             placeholder="Spot Review"
             value=""
-          />
+            rows="5"
+            cols="30"
+          ></textarea>
           <input type="submit" name="submit" value="Create" />
         </form>
+        <button class="cancel-button">Cancel</button>
+        </div>
       </div>
     </div>
-
-    <!-- <script src="index.js"></script>
-    <script src="index2.js"></script> -->
-    <!-- <script src="./JS/anime.min.js"></script> -->
-    <!-- Compiled and minified JavaScript -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
-  </body>
+</body>
 </html>
