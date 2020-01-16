@@ -1,7 +1,7 @@
 import { Spot } from "../interfaces";
+import "./SpotCard.css";
 
 export const templateSpotCard = <T extends Spot>(spot: T) => {
-  // console.log(spot);
   return `
     <div class="card animated fadeIn" data-spot-id="${spot.id}">
     <img src="${spot.image}" alt="Avatar" class="image" data-spot-id="${spot.id}">
