@@ -1,5 +1,5 @@
-export const apiUrlLocations = "http://localhost:3000/api/v1/locations";
-export const apiUrlSpots = "http://localhost:3000/api/v1/spots";
+export const apiUrlLocations: string = "http://localhost:3000/api/v1/locations";
+export const apiUrlSpots: string = "http://localhost:3000/api/v1/spots";
 export const locationsContainer = document.querySelector(
   ".list-locations"
 ) as HTMLUListElement;
@@ -26,3 +26,7 @@ export const closeButton = document.querySelector(
 export const form = document.querySelector(".create-form") as HTMLFormElement;
 
 export const modal = document.getElementById("myModal") as HTMLDivElement;
+
+export const createFormCancelButton = document.querySelector(
+  ".cancel-button"
+) as HTMLButtonElement;
