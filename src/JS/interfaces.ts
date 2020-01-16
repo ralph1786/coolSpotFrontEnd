@@ -12,3 +12,8 @@ export interface Spot {
   review: string;
   name: string;
 }
+
+export interface Location {
+  id: number;
+  name: string;
+}
