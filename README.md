@@ -15,11 +15,11 @@ This will start Webpack development server, which will refresh your application 
 
 ### Prerequisites
 
-Download anime.js
-Have latest ruby on rails
+Download anime.js<br/>
+Have latest ruby on rails<br/>
 Have Node.js installed
 
-### Technology and Languages Used
+### Technologies and Languages Used
 
 1. HTML
    1. SVG
