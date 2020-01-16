@@ -8,10 +8,7 @@
 body {
   margin-top: 20px;
   /* padding: 80px; */
-}
-
-button {
-  outline: none;
+  box-sizing: border-box;
 }
 
 .polymorph {
@@ -36,19 +33,17 @@ button {
 }
 
 .sidenav {
-  height: 100%; /* 100% Full-height */
-  width: 0; /* 0 width - change this with JavaScript */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Stay on top */
-  top: 0; /* Stay at the top */
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
   left: 0;
-  background-color: rgb(248, 151, 61); /* Black*/
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 60px; /* Place content 60px from the top */
-  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  background-color: rgb(248, 151, 61);
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.5s;
 }
-
-/* The navigation menu links */
 
 .sidenav ul li {
   padding: 8px;
@@ -69,7 +64,6 @@ button {
   margin-right: 10px;
 }
 
-/* When you mouse over the navigation links, change their color */
 .sidenav button:hover,
 .sidenav li:hover {
   color: #adacac;
@@ -78,7 +72,6 @@ button {
   transition: all 0.4s ease-in;
 }
 
-/* Position and style the close button (top right corner) */
 .sidenav .closebtn {
   position: absolute;
   top: 0;
@@ -91,20 +84,21 @@ button {
 #main {
   display: none;
   /* grid-template-columns: repeat(3, 1fr); */
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   grid-template-rows: repeat(3, 1fr);
   /* transition: margin-left 0.5s; */
   padding: 20px;
   grid-gap: 20px;
 }
 
-#main h2 {
+#main h3 {
   grid-column: 1/3;
   grid-row: 2/3;
-  justify-self: end;
+  justify-self: center;
+  font-size: 2rem;
 }
 
-#main h1 {
+#main h2 {
   place-self: center;
   font-family: "Merienda", cursive;
   color: rgb(90, 63, 40);
@@ -136,84 +130,27 @@ button {
 
 .create-new-spot-button {
   display: none;
-  margin-top: -50px;
-  float: right;
+  /* margin-top: -50px; */
+  margin-top: 3rem;
+  margin-right: 2rem;
+  /* float: right; */
+  margin-left: 20%;
   color: white;
-  background-color: rgb(101, 223, 101);
+  background-color: rgb(30, 182, 30);
   cursor: pointer;
   -webkit-box-shadow: 10px 10px 82px -19px rgba(133, 128, 133, 0.78);
   -moz-box-shadow: 10px 10px 82px -19px rgba(133, 128, 133, 0.78);
   box-shadow: 10px 10px 82px -19px rgba(133, 128, 133, 0.78);
-  padding: 5px;
-  border-radius: 20px;
+  padding: 0.8rem;
+  border-radius: 25px;
+  font-size: 1rem;
 }
 
 .create-new-spot-button:hover {
-  background-color: rgb(30, 182, 30);
+  background-color: rgb(101, 223, 101);
   transform: scale(1.05);
   transition: all 0.4s ease-in;
   color: white;
-}
-
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
-  width: 70%;
-  background-color: rgba(91, 165, 250, 0.993);
-  color: white;
-  margin: 20px;
-  overflow-y: scroll;
-}
-
-.card img {
-  width: 100%;
-  height: 150px;
-}
-
-.card:hover {
-  box-shadow: 0 15px 26px 0 rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-}
-
-.container {
-  padding: 2px 16px;
-  display: flex; /*added*/
-  flex-direction: column; /*added*/
-}
-.container .review {
-  display: none;
-}
-
-.container .js-edit {
-  background-color: white;
-  color: rgb(238, 148, 44);
-  margin: 5px auto;
-  padding: 5px;
-  cursor: pointer;
-  width: 75%;
-}
-
-.container .js-edit:hover {
-  background-color: rgb(238, 148, 44);
-  color: white;
-  transform: scale(1.05);
-  transition: all 0.4s ease-in;
-}
-
-.container .js-delete {
-  background-color: white;
-  margin: 5px auto;
-  padding: 5px;
-  color: rgb(230, 17, 17);
-  cursor: pointer;
-  width: 75%;
-}
-
-.container .js-delete:hover {
-  background-color: rgb(230, 17, 17);
-  color: white;
-  transform: scale(1.05);
-  transition: all 0.4s ease-in;
 }
 
 /* THIS IS THE CSS FOR THE MODAL. */
@@ -269,53 +206,4 @@ button {
   cursor: pointer;
   transform: scale(1.1);
   transition: all 0.4s ease-in;
-}
-
-.form-container {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0, 0, 0); /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
-}
-
-.form-content {
-  background-color: var(--modal-bg-color);
-  margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
-  border: 1px solid #888;
-  width: 40%; /* Could be more or less, depending on screen size */
-  color: var(--modal-text-color);
-}
-
-button[type="submit"]:hover {
-  background-color: rgb(250, 161, 45);
-  color: white;
-  cursor: pointer;
-}
-
-.edit-form {
-  text-align: center;
-  margin: 10px;
-}
-
-.edit-form label,
-.edit-form input {
-  margin: 10px;
-  width: 60%;
-  outline: none;
-}
-
-.edit-form input:focus {
-  border-color: orange;
-}
-
-.edit-form button[type="submit"] {
-  margin-top: 5px;
-  float: right;
 }
