@@ -9,7 +9,8 @@ import {
   formContainer,
   form,
   createFormContainer,
-  modal
+  modal,
+  createFormCancelButton
 } from "./constants";
 import { closeNav, openNav } from "./navControls";
 import {
@@ -19,7 +20,7 @@ import {
   delegateEditSubmitButton,
   delegateDeleteButton
 } from "./delegations";
-import createNewSpotFetch from "./createSpot";
+import createNewSpotFetch from "./utils/createSpot";
 
 window.addEventListener("load", animationFunc);
 
@@ -61,6 +62,12 @@ const span = document.getElementsByClassName("close")[0];
 span.addEventListener("click", () => {
   modal.style.display = "none";
 });
+
+const closeModal = () => {
+  modal.style.display = "none";
+  formContainer.style.display = "none";
+  createFormContainer.style.display = "none";
+};
 // When the user clicks anywhere outside of the modal, close it
 window.addEventListener("click", e => {
   if (
@@ -68,8 +75,9 @@ window.addEventListener("click", e => {
     e.target === formContainer ||
     e.target === createFormContainer
   ) {
-    modal.style.display = "none";
-    formContainer.style.display = "none";
-    createFormContainer.style.display = "none";
+    closeModal();
   }
 });
+
+//Close modal with cancel buttons
+createFormCancelButton.addEventListener("click", closeModal);
