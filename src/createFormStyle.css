@@ -18,35 +18,66 @@
   border: 1px solid #888;
   width: 40%; /* Could be more or less, depending on screen size */
   color: var(--modal-text-color);
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
 }
 
-.create-form-content .create-form h3 {
+.create-form h3 {
   text-align: center;
   margin-top: -10px;
-}
-
-.create-form-content .create-form .location-options {
-  margin-left: 40px;
+  display: block;
+  width: 100%;
 }
 
 .create-form-content .create-form input[type="text"] {
-  display: block;
-  margin: 10px 35%;
+  display: flex;
+  margin: 10px 10px;
   text-align: center;
-  outline: none;
+  outline-color: orange;
+  width: 40%;
 }
 
-.create-form-content .create-form input[type="text"]:focus {
-  border-color: orange;
+.create-form .create-form-review {
+  display: block;
+}
+
+.create-form label,
+textarea {
+  margin-left: 5px;
+  width: 45%;
+}
+
+.create-form textarea {
+  margin-bottom: 20px;
 }
 
 .create-form-content .create-form input[type="submit"] {
   float: right;
   margin-right: 20px;
+  margin-left: 5px;
+  width: 12%;
+  padding: 2px;
+  border-radius: 25px;
+  font-size: 0.7rem;
 }
 
 .create-form-content .create-form input[type="submit"]:hover {
   background-color: rgb(250, 161, 45);
+  color: white;
+  cursor: pointer;
+}
+
+.create-form-content .cancel-button {
+  float: right;
+  width: 12%;
+  padding: 2px;
+  border-radius: 25px;
+  font-size: 0.7rem;
+}
+
+.create-form-content .cancel-button:hover {
+  background-color: rgb(252, 53, 53);
   color: white;
   cursor: pointer;
 }
