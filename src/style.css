@@ -54,17 +54,18 @@ body {
   margin: 10px 0;
 }
 
-.sidenav button {
+.sidenav .close-btn {
   color: white;
-  font-size: 30px;
   background: transparent;
   border: none;
   float: right;
-  margin-top: -30px;
-  margin-right: 10px;
+  position: absolute;
+  top: 0;
+  right: 10px;
+  font-size: 36px;
 }
 
-.sidenav button:hover,
+.sidenav .close-btn:hover,
 .sidenav li:hover {
   color: #adacac;
   cursor: pointer;
@@ -72,12 +73,23 @@ body {
   transition: all 0.4s ease-in;
 }
 
-.sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
+.sidenav .create-new-location-btn {
+  margin-left: 15%;
+  color: white;
+  background-color: rgb(30, 182, 30);
+  cursor: pointer;
+  -webkit-box-shadow: 10px 10px 82px -19px rgba(133, 128, 133, 0.78);
+  -moz-box-shadow: 10px 10px 82px -19px rgba(133, 128, 133, 0.78);
+  box-shadow: 10px 10px 82px -19px rgba(133, 128, 133, 0.78);
+  padding: 0.6rem;
+  border-radius: 25px;
+  font-size: 1rem;
+}
+
+.sidenav .create-new-location-btn:hover {
+  background-color: rgb(101, 223, 101);
+  transform: scale(1.03);
+  transition: all 0.4s ease-in;
 }
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
@@ -125,7 +137,6 @@ body {
   background-color: rgba(248, 159, 42, 0.993);
   transform: scale(1.1);
   transition: all 0.4s ease;
-  color: white;
 }
 
 .create-new-spot-button {
@@ -148,9 +159,8 @@ body {
 
 .create-new-spot-button:hover {
   background-color: rgb(101, 223, 101);
-  transform: scale(1.05);
+  transform: scale(1.03);
   transition: all 0.4s ease-in;
-  color: white;
 }
 
 /* THIS IS THE CSS FOR THE MODAL. */
