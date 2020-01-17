@@ -4,6 +4,9 @@ export const locationsContainer = document.querySelector(
   ".list-locations"
 ) as HTMLUListElement;
 export const spotsContainer = document.querySelector("#main") as HTMLDivElement;
+export const locationOptions = document.querySelector(
+  ".location-options"
+) as HTMLSelectElement;
 export const locationButton = document.querySelector(
   ".location-button"
 ) as HTMLButtonElement;
@@ -29,4 +32,8 @@ export const modal = document.getElementById("myModal") as HTMLDivElement;
 
 export const createFormCancelButton = document.querySelector(
   ".cancel-button"
+) as HTMLButtonElement;
+
+export const createLocationButton = document.querySelector(
+  ".create-new-location-btn"
 ) as HTMLButtonElement;
