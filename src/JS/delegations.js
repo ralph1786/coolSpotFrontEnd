@@ -9,6 +9,9 @@ import fetchSpots from "./utils/allSpots";
 import deleteFetch from "./utils/deleteSpot";
 import { editFormTemplate } from "./UI/EditForm";
 import makeUpdateFetch from "./utils/updateSpot";
+import createLocation from "./utils/createLocation";
+
+import validate from "./validation";
 
 export function delegateLocationClick() {
   locationsContainer.addEventListener("click", e => {
@@ -98,9 +101,23 @@ export function delegateEditSubmitButton() {
   });
   formContent.addEventListener("click", e => {
     console.log("clicked");
-    if (e.target.className === "edit-cancel") {
+    if (
+      e.target.className === "edit-cancel" ||
+      e.target.className === "location-create-cancel"
+    ) {
       formContainer.style.display = "none";
     }
+  });
+}
+
+export function delegateLocationCreateSubmitButton() {
+  formContent.addEventListener("submit", e => {
+    e.preventDefault();
+    const locationInfo = {
+      name: e.target["name"].value
+    };
+    validate(locationInfo);
+    createLocation(locationInfo);
   });
 }
 
@@ -108,7 +125,6 @@ export function delegateDeleteButton() {
   spotsContainer.addEventListener("click", e => {
     if (e.target.className === "js-delete") {
       const spotId = e.target.dataset.spotId;
-      // debugger;
       deleteFetch(spotId);
       e.target.parentNode.parentNode.remove();
     }
