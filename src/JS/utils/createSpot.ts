@@ -3,6 +3,7 @@ import axios from "axios";
 import { Spot } from "../interfaces";
 import { apiUrlSpots, spotsContainer, form } from "../constants";
 import { templateSpotCard } from "../UI/SpotCard";
+import validate from "../validation";
 
 function createNewSpotFetch() {
   const selectLocation = document.querySelector(
@@ -12,14 +13,16 @@ function createNewSpotFetch() {
     ".create-form-container"
   ) as HTMLDivElement;
   const locationId = selectLocation.value;
+
   const spotInfo = {
     name: form["spot-name"].value,
     address: form["spot-address"].value,
-    image: form["image-url"].value,
+    image: form["spot-image"].value,
     review: form["spot-review"].value,
     location_id: locationId
   };
-  // debugger;
+
+  validate(spotInfo);
   axios
     .post(`${apiUrlSpots}`, spotInfo)
     .then((spot: { data: Spot }) => {
