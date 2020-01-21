@@ -10,7 +10,9 @@ import {
   form,
   createFormContainer,
   modal,
-  createFormCancelButton
+  createFormCancelButton,
+  createLocationButton,
+  formContent
 } from "./constants";
 import { closeNav, openNav } from "./navControls";
 import {
@@ -18,9 +20,12 @@ import {
   delegateShowPageClick,
   delegateEditButton,
   delegateEditSubmitButton,
-  delegateDeleteButton
+  delegateDeleteButton,
+  delegateLocationCreateSubmitButton
 } from "./delegations";
 import createNewSpotFetch from "./utils/createSpot";
+
+import { LocationCreateForm } from "./UI/LocationCreateForm";
 
 window.addEventListener("load", animationFunc);
 
@@ -44,14 +49,30 @@ delegateEditSubmitButton();
 
 delegateDeleteButton();
 
+delegateLocationCreateSubmitButton();
+
 //CREATE A NEW SPOT
 
-const createButton = form["submit"];
-createButton.addEventListener("click", e => {
+// const createButton = form["submit"];
+// createButton.addEventListener("click", e => {
+//   e.preventDefault();
+//   // console.log("it works");
+//   createNewSpotFetch();
+//   modal.style.display = "none";
+// });
+
+form.addEventListener("submit", e => {
   e.preventDefault();
-  // console.log("it works");
+  console.log("it works");
   createNewSpotFetch();
   modal.style.display = "none";
+});
+
+//CREATE NEW LOCATION
+createLocationButton.addEventListener("click", () => {
+  console.log("you clicked me...");
+  formContainer.style.display = "block";
+  formContent.innerHTML = LocationCreateForm();
 });
 
 // Get the modal
